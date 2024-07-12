@@ -1,0 +1,44 @@
+ideas = {
+	country = {
+		EoF_MCW_Zebrican_Privatization_1 = {
+			removal_cost = -1
+			picture = man_five_year_plan_industry
+			modifier = {
+				production_speed_infrastructure_factor = -0.05
+				consumer_goods_factor = 0.15
+				
+			}
+		}
+		EoF_MCW_Zebrican_Privatization_2 = {
+			removal_cost = -1
+			picture = man_five_year_plan_industry
+			modifier = {
+				production_speed_infrastructure_factor = -0.10
+				consumer_goods_factor = 0.25
+			}
+		}
+		EoF_MCW_Zebrican_Privatization_3 = {
+			removal_cost = -1
+			picture = man_five_year_plan_industry
+			modifier = {
+				production_speed_infrastructure_factor = -0.25
+				consumer_goods_factor = 0.185
+				
+			}
+		}
+		EoF_MCW_Minotaur_State_Resource_Buff = {
+			removal_cost = -1
+			picture = man_five_year_plan_industry
+			modifier = {
+				local_resources_factor = -0.15
+			}
+		}
+		EoF_MCW_Fuel_Increase = {
+			removal_cost = -1
+			picture = man_five_year_plan_industry
+			modifier = {
+				fuel_gain_factor_from_states = 1.5
+			}
+		}
+	}
+}
