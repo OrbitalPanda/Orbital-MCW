@@ -129,12 +129,57 @@ ideas = {
 	
 		}	
 
-
-
+		EoF_MCW_all_special_forces_idea_1		= {
+			icon = GFX_idea_generic_supply_depot
+			modifier = {
+				special_forces_attack_factor = -0.08	
+			}
 	
+		}	
 
-
+		EoF_MCW_develop_domestic_fighters_timed_idea = {
+			icon = GFX_idea_generic_supply_depot
+			modifier = {
+				consumer_goods_factor = 0.15					
+			}
 	
+		}		
+
+		EoF_MCW_holy_fyuk_idea = {
+			icon = GFX_idea_generic_supply_depot
+			modifier = {
+				research_speed_factor = -0.12	
+				
+			}
+	
+		}	
+		EoF_MCW_license_planes_idea = {
+			icon = GFX_idea_generic_supply_depot
+			modifier = {
+				
+				license_production_speed = 0.125	
+				
+			}
+	
+		}		
+
+		EoF_MCW_honorable_dialogue_idea = {
+			icon = GFX_idea_generic_supply_depot
+			modifier = {
+				stability_weekly = -0.005
+				
+			}
+	
+		}	
+		EoF_MCW_coopt_the_communion_idea = {
+			icon = GFX_idea_generic_supply_depot
+			modifier = {
+				stability_weekly = -0.01
+				
+			}
+	
+		}	
+
 
 		
 	}
