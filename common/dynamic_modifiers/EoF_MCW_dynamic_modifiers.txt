@@ -3,3 +3,15 @@ EoF_MCW_Minotaur_Expertise = {
 
 	state_resources_factor = 0.45
 }
+
+
+
+
+
+
+
+
+
+
+
+

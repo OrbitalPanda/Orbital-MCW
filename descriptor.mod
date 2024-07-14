@@ -1,14 +1,11 @@
-version="0.14.2"
+version="1.0"
 tags={
-	"Balance"
-	"Gameplay"
+	"Ideologies"
 }
+name="mcw_dev"
 dependencies={
 	"Equestria at War"
 }
 replace_path="common/ai_equipment"
 replace_path="gfx/models/EAWEntity/ponies"
-name="Equus on Fire: Redux"
 supported_version="1.14.7"
-picture="thumbnail.png"
-remote_file_id="3166665930"

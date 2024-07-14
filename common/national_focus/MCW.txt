@@ -29,8 +29,9 @@ focus_tree = {
 		
 
 		completion_reward = {
-				add_stability = 0.35
-				
+			add_stability = 0.35
+			add_ideas = EoF_MCW_incoherent_military_command_structure
+			add_ideas = EoF_MCW_nonexistent_conscription_system
 		}
 		
 	}
@@ -202,7 +203,9 @@ focus_tree = {
 
 
 		completion_reward = {
-			add_ideas = EoF_MCW_Zebrican_Privatization_2
+			effect_tooltip = {
+			swap_ideas = { remove_idea = EoF_MCW_Zebrican_Privatization_1 add_idea = EoF_MCW_Zebrican_Privatization_2 }
+		}
 			#base resources in colthage,focused on air resources, so aluminum and rubber 
 		}
 		
@@ -228,7 +231,11 @@ focus_tree = {
 
 
 		completion_reward = {
-			add_ideas = EoF_MCW_Zebrican_Privatization_3
+
+			
+			effect_tooltip = {
+			swap_ideas = { remove_idea = EoF_MCW_Zebrican_Privatization_2 add_idea = EoF_MCW_Zebrican_Privatization_3 }
+		}
 			#base resources in colthage,focused on air resources, so aluminum and rubber 
 		}
 		
@@ -381,6 +388,16 @@ focus_tree = {
 
 		completion_reward = {
 			#research boost to synths
+			if = {
+				limit = { NOT = { has_tech = synth_oil_experiments } }
+				set_technology = { synth_oil_experiments = 1 }
+			}
+			add_tech_bonus = {
+				name = synth_bonus
+				bonus = 0.65
+				uses = 3
+				category = synth_resources
+			}
 		}
 		
 	}
@@ -407,7 +424,7 @@ focus_tree = {
 			modify_building_resources = {
 				building = synthetic_refinery
 				resource = rubber
-				amount = -1
+				amount = -2
 			}
 			add_ideas = EoF_MCW_Fuel_Increase
 		}
@@ -415,7 +432,29 @@ focus_tree = {
 	}
 
 
+	focus = {
+		id = EoF_MCW_Mass_Implementation_Of_Our_Native_Technology
+		icon = GFX_focus_indy_generic_political
+		
+		x = 0
+		y = 1
+		cost = 1
+		relative_position_id = EoF_MCW_Refine_Fuel_Production
+		prerequisite = { focus = EoF_MCW_Refine_Fuel_Production }
+		mutually_exclusive = {
+		}
+		available_if_capitulated = yes
+		
+		
 
+		completion_reward = {
+			# -1 rubber production from synths 
+			# + fuel production from synths 
+			add_ideas = EoF_MCW_Cheap_Refineries
+			
+		}
+		
+	}
 
 
 
@@ -465,6 +504,7 @@ focus_tree = {
 
 
 		completion_reward = {
+			add_ideas = EoF_MCW_Expand_Bureaucracy_idea
 		}
 		
 	}
@@ -483,6 +523,7 @@ focus_tree = {
 
 
 		completion_reward = {
+			add_ideas = EoF_MCW_Spiritual_Mobilization_idea_1
 		}
 		
 	}
@@ -502,6 +543,8 @@ focus_tree = {
 
 
 		completion_reward = {
+			swap_ideas = { remove_idea = EoF_MCW_Spiritual_Mobilization_idea_1 add_idea = EoF_MCW_Spiritual_Mobilization_idea_2 }
+			
 		}
 		
 	}	
@@ -516,7 +559,7 @@ focus_tree = {
 		id = EoF_MCW_tonk
 		icon = GFX_focus_indy_generic_political
 		
-		x = 1
+		x = 2
 		y = 1
 		cost = 1
 		relative_position_id = EoF_MCW_army_1
@@ -527,16 +570,59 @@ focus_tree = {
 
 
 		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 12
+				category = armor
+			}
+			completion_reward = {
+				add_ideas = EoF_MCW_tonk_idea
+				add_timed_idea = {
+					idea = EoF_MCW_tonk_development_timed_idea
+					days = 730
+				}
+			}
+			
 		}
 		
 	}
+	
+	
+	focus = {
+		id = EoF_MCW_optimize_for_domestic_production
+		icon = GFX_focus_indy_generic_political
+		
+		x = 0
+		y = 1
+		cost = 1
+		relative_position_id = EoF_MCW_tonk
+		prerequisite = { focus = EoF_MCW_tonk }
+
+
+		available_if_capitulated = yes
+
+
+		completion_reward = {
+			completion_reward = {
+				#add a tooltop for mio here
+			}
+			
+		}
+		
+	}	
+	
+	
+	
+	
+	
+	
 
 
 	focus = {
 		id = EoF_MCW_all_special_forces
 		icon = GFX_focus_indy_generic_political
 		
-		x = 3
+		x = 5
 		y = 1
 		cost = 1
 		relative_position_id = EoF_MCW_army_1
@@ -568,7 +654,12 @@ focus_tree = {
 
 
 		completion_reward = {
-			#sf bonuses
+			add_doctrine_cost_reduction = {
+				name = EoF_MCW_sf_doctrine
+				cost_reduction = 0.375
+				uses = 3
+				category = cat_superior_firepower
+			}
 		}
 		
 	}
@@ -590,6 +681,12 @@ focus_tree = {
 
 		completion_reward = {
 			#gbp bonuses
+			add_doctrine_cost_reduction = {
+				name = EoF_MCW_gbp_doctrine
+				cost_reduction = 0.75
+				uses = 5
+				category = cat_grand_battle_plan
+			}
 		}
 		
 	}
@@ -614,6 +711,12 @@ focus_tree = {
 		completion_reward = {
 			#inf gun research bonus 
 			#more defense 
+			
+			add_tech_bonus = {
+			bonus = 0.88
+			uses = 3
+			category = infantry_weapons
+			}
 		}
 		
 	}
@@ -638,6 +741,11 @@ focus_tree = {
 		completion_reward = {
 			#artillery research bonus 
 			#more brkth
+			add_tech_bonus = {
+			bonus = 3.0
+			uses = 1
+			category = artillery
+			}
 		}
 		
 	}
